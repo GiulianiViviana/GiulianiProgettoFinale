@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 
-<form [formGroup] = "myForm" class="jumbotron">
+<form [formGroup] = "myForm"  class="jumbotron">
     <input type="text" [formControl]="myForm.controls['nome']" class="form-control">
     <div *ngIf="!myForm.controls['nome'].valid" class="alert alert-danger">Nome non è valido </div>
     <div *ngIf="myForm.controls['nome'].hasError('required')" class="alert alert-danger">Nome è richiesto</div>
@@ -17,13 +17,21 @@
     <div *ngIf="!myForm.controls['password'].valid" class="alert alert-danger">Password non è valido </div>
     <div *ngIf="myForm.controls['password'].hasError('required')" class="alert alert-danger">Password è richiesto</div>
     
-    <button (click) = 'onSubmit()' class="btn btn-primary">Registrazione</button>
+    <button type='submit' class="btn btn-primary">Registrazione</button>
 </form>
 
 <hr>
+<ul class="utenti">
+  <li *ngFor="let u of utenti"
+    [class.selected]="u === selectedUtenti"
+    (click)="onSelect(u)">
+    <span class="badge">{{u.cognome}}</span> 
+    <span class="ins">{{u.nome}} {{u.email}}</span>
+  </li>
+</ul>
 
-<app-utenti> </app-utenti>
+<app-utenti></app-utenti>
 
 <hr>
 
-<app-commenti></app-commenti>
+

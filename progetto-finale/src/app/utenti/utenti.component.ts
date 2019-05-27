@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Utenti } from '../utenti';
+import { UTENTI } from '../mock-utenti';
+
 
 @Component({
   selector: 'app-utenti',
@@ -7,9 +9,13 @@ import { Utenti } from '../utenti';
   styleUrls: ['./utenti.component.css']
 })
 export class UtentiComponent implements OnInit {
-@Input() v: Utenti;
-  constructor() { }
-
+@Input() v: Utenti[];
+utenti = UTENTI;
+  constructor() {
+   
+}
+ 
+ 
   ngOnInit() {
   }
 

@@ -1,6 +1,9 @@
-<div>
-    <h3> Nome: {{v.nome}}</h3>
-    <h3> Cognome: {{v.cognome}}</h3>
-    <h3> Email: {{v.email}}</h3>
-    <h3> Password: {{v.password}}</h3>
-</div>
+<h2> Utenti </h2>
+<ul>
+    <li *ngFor = "let utente of utenti">
+        Nome: {{utente.nome}}<br>
+        Cognome: {{utente.cognome}}<br>
+        Email: {{utente.email}}<br>
+        Password: {{utente.password}}<br>
+    </li>
+</ul>
