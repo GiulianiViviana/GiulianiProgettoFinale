@@ -10,7 +10,7 @@
   list-style-type: none;
   padding: 0;
 }
-.utenti li {
+li {
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -25,21 +25,21 @@
 {
   margin-right:1em;
 }
-.utenti li.selected:hover {
+li.selected:hover {
   background-color: #BBD8DC !important;
   color: black;
 }
-.utenti li:hover {
+li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
-.utenti .text {
+.text {
     
   position: relative;
   top: -3px;
 }
-.utenti .badge {
+.badge {
   display: inline-block;
   font-size: small;
   color: white;
