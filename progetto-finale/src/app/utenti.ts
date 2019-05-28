@@ -1,4 +1,5 @@
 export class Utenti{
+    username:string;
     nome:string;
     cognome:string;
     email:string;

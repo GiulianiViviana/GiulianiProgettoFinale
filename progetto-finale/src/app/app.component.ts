@@ -16,6 +16,7 @@ export class AppComponent {
  constructor(fb: FormBuilder) {
    this.utente = Array<Utenti>();
    this.myForm = fb.group({
+     'username': ['', Validators.required],
      'nome': ['', Validators.required],
      'cognome': ['', Validators.required],
      'email': ['', Validators.required],
@@ -23,17 +24,19 @@ export class AppComponent {
    });
 }
  onSubmit(value: string): void {
+    console.log('username: ', this.myForm.controls['username'].value );
     console.log('nome: ', this.myForm.controls['nome'].value );
     console.log('cognome: ', this.myForm.controls['cognome'].value);
     console.log('email: ', this.myForm.controls['email'].value);
     console.log('password: ', this.myForm.controls['password'].value);
     this.onAdd();
   }
-  onSelect(utenteS: Utenti): void {
-    this.selectedUtenti = utenteS;
+  onSelect(ute: Utenti): void {
+    this.selectedUtenti = ute;
   }
   onAdd(){
    let ut : Utenti = new Utenti();
+   ut.username = this.myForm.controls['username'].value;
    ut.nome = this.myForm.controls['nome'].value;
    ut.cognome = this.myForm.controls['cognome'].value;
    ut.email = this.myForm.controls['email'].value;

@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { UtentiComponent } from './utenti/utenti.component';
 import { CommentiComponent } from './commenti/commenti.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UtentiDettagliComponent } from './utenti-dettagli/utenti-dettagli.component';
 @NgModule({
   declarations: [
     AppComponent,
     UtentiComponent,
-    CommentiComponent
+    CommentiComponent,
+    UtentiDettagliComponent
   ],
  imports: [
     BrowserModule, NgbModule ,

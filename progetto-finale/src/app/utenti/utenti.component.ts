@@ -9,7 +9,6 @@ import { UTENTI } from '../mock-utenti';
   styleUrls: ['./utenti.component.css']
 })
 export class UtentiComponent implements OnInit {
-@Input() v: Utenti[];
 utenti = UTENTI;
   constructor() {
    
