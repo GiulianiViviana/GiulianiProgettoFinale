@@ -1,7 +1,9 @@
 <h2> Utenti </h2>
 <ul>
-<li *ngFor = "let utente of utenti">
-    Username: {{utente.username}}
+<li *ngFor = "let u of utenti">
+     <span class="badge">Username: </span>
+    <span class="ins">{{u.username}}</span>
     
 </li>
 </ul>
+

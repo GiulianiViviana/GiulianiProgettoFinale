@@ -11,10 +11,9 @@ import { UTENTI } from './mock-utenti';
 export class AppComponent {
   title = 'Progetto finale';
   myForm: FormGroup;
-  utente : Utenti[];
+  utente : Utenti[] = UTENTI;
   selectedUtenti: Utenti;
  constructor(fb: FormBuilder) {
-   this.utente = Array<Utenti>();
    this.myForm = fb.group({
      'username': ['', Validators.required],
      'nome': ['', Validators.required],

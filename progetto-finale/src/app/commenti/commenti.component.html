@@ -1,3 +1,7 @@
 <div>
     <h3> Bacheca dei commenti </h3>
+        <form [formGroup] = "myForm"  (ngSubmit)="onSubmit(myForm.value)" class="jumbotron">
+              Commenta qui: <input type="text" [formControl]="myForm.controls['commento']" class="form-control">
+              <button type='submit' class="btn btn-primary">Invia</button>
+        </form>
 </div>

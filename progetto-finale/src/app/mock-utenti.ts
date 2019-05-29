@@ -1,6 +1,6 @@
 import { Utenti } from './utenti';
 
-export const UTENTI : Utenti[] = 
+export const UTENTI= 
 [
   {
     "username": "Mario67",
