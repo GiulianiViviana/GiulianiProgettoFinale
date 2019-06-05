@@ -2,13 +2,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<button type='submit' class="btn btn-secondary">Login</button>
-<button type='submit' class="btn btn-secondary">Registrazione</button>
-<button type='submit' class="btn btn-danger">Logout</button>
+<button (click)="onLogin()" class="btn btn-secondary">Login</button>
+<button (click)="onRegistrazione()" class="btn btn-secondary">Registrazione</button>
+<button (click)="onLogout()" class="btn btn-danger">Logout</button>
 
 <div class="row">
   <div class="col-sm-6">
-      <form [formGroup] = "myForm"  (ngSubmit)="onSubmit(myForm.value)" class="jumbotron">
+     <div *ngIf = "comp">
+          <form [formGroup] = "loginForm"  (ngSubmit)="onContrLogin()" class="jumbotron">
+            Username: <input type="text" [formControl]="loginForm.controls['username']" class="form-control">
+            <div *ngIf="!loginForm.controls['username'].valid" class="alert alert-danger">Username non è valido </div>
+            <div *ngIf="loginForm.controls['username'].hasError('required')" class="alert alert-danger">Username è richiesto</div>
+          
+          Password: <input type="password" [formControl]="loginForm.controls['password']" class="form-control">
+            <div *ngIf="!loginForm.controls['password'].valid" class="alert alert-danger">Password non è valido </div>
+            <div *ngIf="loginForm.controls['password'].hasError('required')" class="alert alert-danger">Password è richiesto</div>
+            
+            <button type='submit' class="btn btn-primary">Invio</button>
+        </form>
+      </div>
+      
+     <div *ngIf = "reg">
+        <form [formGroup] = "myForm"  (ngSubmit)="onSubmit(myForm.value)" class="jumbotron">
           Username: <input type="text" [formControl]="myForm.controls['username']" class="form-control">
           <div *ngIf="!myForm.controls['username'].valid" class="alert alert-danger">Username non è valido </div>
           <div *ngIf="myForm.controls['username'].hasError('required')" class="alert alert-danger">Username è richiesto</div>
@@ -31,8 +46,9 @@
           
           <button type='submit' class="btn btn-primary">Registrati</button>
       </form>
-
 </div>
+</div>
+
 <div class="col-sm-6">
   <ul class="utenti">
     <li *ngFor="let u of utente"
@@ -45,7 +61,7 @@
 
 
 <app-utenti-dettagli *ngIf="selectedUtenti" [v]="selectedUtenti"></app-utenti-dettagli>
-<app-commenti></app-commenti>
+<app-commenti [f]="utenteLog"></app-commenti>
 </div>
 </div>
 

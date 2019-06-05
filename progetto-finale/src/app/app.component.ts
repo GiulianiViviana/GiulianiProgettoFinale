@@ -11,14 +11,23 @@ import { UTENTI } from './mock-utenti';
 export class AppComponent {
   title = 'Progetto finale';
   myForm: FormGroup;
+  loginForm: FormGroup;
   utente : Utenti[] = UTENTI;
   selectedUtenti: Utenti;
+  comp : boolean;
+  reg: boolean;
+  utenteLog : Utenti ;
+  s : boolean;
  constructor(fb: FormBuilder) {
    this.myForm = fb.group({
      'username': ['', Validators.required],
      'nome': ['', Validators.required],
      'cognome': ['', Validators.required],
      'email': ['', Validators.required],
+     'password': ['', Validators.required],
+   });
+   this.loginForm = fb.group({
+     'username': ['', Validators.required],
      'password': ['', Validators.required],
    });
 }
@@ -43,5 +52,31 @@ export class AppComponent {
    this.utente.push(ut);
    console.log("Aggiunto");
  }
+ onLogin(){
+    this.comp = !this.comp;
+    this.reg = false;
+   
+ }
+  onRegistrazione(){
+    this.reg = !this.reg;
+    this.comp = false;
+ }
+ 
+ onLogout(){
+     this.utenteLog=null;
+     console.log("logout");
+ }
+ 
+onContrLogin(){
+  for(let i=0; i<this.utente.length; i++){
+    if((this.loginForm.controls['username'].value == this.utente[i].username)&&(this.loginForm.controls['password'].value == this.utente[i].password)){
+    this.utenteLog = this.utente[i];
+    console.log("Utente loggato");
+    }
+  }
+  if(this.utenteLog == null){
+  console.log("Utente inesistente");
+  }
+}
  
 }

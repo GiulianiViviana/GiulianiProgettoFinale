@@ -1,9 +1,12 @@
 export const COMMENTI=[
     {
-        "commento" : "Ciao mondo"
+        
+        "commento" : "Ciao mondo",
+        "username" : "Mario67"
     },
     {
-        "commento" : "Hello world"
+        "commento" : "Hello world",
+        "username" : "Paul345"
     },
     
 ]
