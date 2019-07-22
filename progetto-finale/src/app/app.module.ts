@@ -6,13 +6,15 @@ import { UtentiComponent } from './utenti/utenti.component';
 import { CommentiComponent } from './commenti/commenti.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UtentiDettagliComponent } from './utenti-dettagli/utenti-dettagli.component';
+import { NewObjectComponent } from './new-object/new-object.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UtentiComponent,
     CommentiComponent,
-    UtentiDettagliComponent
+    UtentiDettagliComponent,
+    NewObjectComponent
     
   ],
  imports: [
