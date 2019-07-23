@@ -61,9 +61,10 @@
 
 
 <app-utenti-dettagli *ngIf="selectedUtenti" [v]="selectedUtenti"></app-utenti-dettagli>
-<app-commenti [f]="utenteLog"></app-commenti>
-<app-new-object></app-new-object>
-
+ 
 </div>
 </div>
-
+ <div *ngIf = "ved" >
+    <app-commenti [f]="utenteLog"></app-commenti>
+    <app-new-object [f]="utenteLog"></app-new-object>
+  </div>

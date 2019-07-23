@@ -16,6 +16,7 @@ export class AppComponent {
   selectedUtenti: Utenti;
   comp : boolean;
   reg: boolean;
+  ved: boolean;
   utenteLog : Utenti ;
   s : boolean;
  constructor(fb: FormBuilder) {
@@ -65,6 +66,7 @@ export class AppComponent {
  onLogout(){
      this.utenteLog=null;
      console.log("logout");
+     this.ved = false;
  }
  
 onContrLogin(){
@@ -72,10 +74,12 @@ onContrLogin(){
     if((this.loginForm.controls['username'].value == this.utente[i].username)&&(this.loginForm.controls['password'].value == this.utente[i].password)){
     this.utenteLog = this.utente[i];
     console.log("Utente loggato");
+    this.ved = true;
     }
   }
   if(this.utenteLog == null){
   console.log("Utente inesistente");
+  this.ved = false;
   }
 }
  

@@ -1,0 +1,16 @@
+<h4> Oggetti in possesso dell'utente </h4>
+
+<form [formGroup] = "utoggForm"  (ngSubmit)="onSubmit(utoggForm.value)" class="jumbotron">
+             Inserisci un oggetto:<input type="text" [formControl]="utoggForm.controls['oggutente']" class="form-control"><br>
+              <button type='submit' class="btn btn-primary">Invia</button>
+</form>
+
+    <div class="card-header">
+        <ul>
+            <li *ngFor = "let u of oggettoutente">
+                <div class="card-body">
+                    <h5>{{u.nomeOggetto}} </h5>
+                </div>
+            </li>
+        </ul>
+    </div>

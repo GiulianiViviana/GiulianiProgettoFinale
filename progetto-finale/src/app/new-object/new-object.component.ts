@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { OGGETTI } from '../mock-object';
 import { Oggetti } from '../oggetti';
+import { Utenti } from '../utenti';
 
 @Component({
   selector: 'app-new-object',
@@ -9,7 +10,8 @@ import { Oggetti } from '../oggetti';
   styleUrls: ['./new-object.component.css']
 })
 export class NewObjectComponent implements OnInit {
-  @Input() o:Oggetti;
+  @Input() o: Oggetti;
+  @Input() f: Utenti;
   oggettiForm: FormGroup;
   oggetto : Oggetti[] = OGGETTI;
  
@@ -31,12 +33,13 @@ export class NewObjectComponent implements OnInit {
   }
   onAdd(){
     let og : Oggetti = new Oggetti();
-   og.oggetto = this.oggettiForm.controls['oggetto'].value;
-   og.descrizione = this.oggettiForm.controls['descrizione'].value;
-   og.prezzo = this.oggettiForm.controls['prezzo'].value;
-   og.link = this.oggettiForm.controls['link'].value;
-   this.oggetto.push(og);
-   console.log("Aggiunto");
+    og.username = this.f.username;
+    og.oggetto = this.oggettiForm.controls['oggetto'].value;
+    og.descrizione = this.oggettiForm.controls['descrizione'].value;
+    og.prezzo = this.oggettiForm.controls['prezzo'].value;
+    og.link = this.oggettiForm.controls['link'].value;
+    this.oggetto.push(og);
+    console.log("Aggiunto");
   
   }
   ngOnInit() {

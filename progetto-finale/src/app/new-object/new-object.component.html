@@ -1,5 +1,6 @@
 
-<div>
+<div class="row">
+  <div class="col-sm-6">
     <h3> Oggetti usati </h3>
             
         <form [formGroup] = "oggettiForm"  (ngSubmit)="onSubmit(oggettiForm.value)" class="jumbotron">
@@ -20,26 +21,30 @@
           <div *ngIf="oggettiForm.controls['link'].hasError('required')" class="alert alert-danger">Link è richiesto</div>
           
           <button type='submit' class="btn btn-primary">Invio</button>
-
+           </form>
+    </div>
 <br>
 <br>
-<h4> Oggetti inseriti dagli utenti </h4>
-<div class="card-header">
-    <ul>
-        <li *ngFor = "let o of oggetto">
-            <div class="card-body">
-                <h5>{{o.oggetto}} </h5>
-                Descrizione: {{o.descrizione}}<br>
-                Prezzo: {{o.prezzo}}<br>
-                Link:  <a href="{{ o.link }}"> {{o.link}} </a>
-            </div>
-        </li>
-    </ul>
+ <div class="col-sm-6">
+    <h4> Oggetti inseriti dagli utenti </h4>
+    <div class="card-header">
+        <ul>
+            <li *ngFor = "let o of oggetto">
+                <div class="card-body">
+                    <h5>{{o.oggetto}} </h5>
+                    Descrizione: {{o.descrizione}}<br>
+                    Prezzo: {{o.prezzo}}<br>
+                    Link:  <a href="{{ o.link }}"> {{o.link}} </a><br>
+                    Pubblicato da: {{o.username}}
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
-      </form>
-</div>
+     
 
 
+</div>
 
 
 
