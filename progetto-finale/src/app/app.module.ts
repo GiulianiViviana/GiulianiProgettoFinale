@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UtentiDettagliComponent } from './utenti-dettagli/utenti-dettagli.component';
 import { NewObjectComponent } from './new-object/new-object.component';
 import { UserObjectsComponent } from './user-objects/user-objects.component';
+import { ObjectsListComponent } from './objects-list/objects-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserObjectsComponent } from './user-objects/user-objects.component';
     CommentiComponent,
     UtentiDettagliComponent,
     NewObjectComponent,
-    UserObjectsComponent
+    UserObjectsComponent,
+    ObjectsListComponent
     
   ],
  imports: [

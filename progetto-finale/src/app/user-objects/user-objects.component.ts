@@ -4,6 +4,7 @@ import { OGGETTIUTENTE } from '../mock-oggettiutente';
 import { Utenti } from '../utenti';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
+
 @Component({
   selector: 'app-user-objects',
   templateUrl: './user-objects.component.html',
@@ -13,6 +14,7 @@ export class UserObjectsComponent implements OnInit {
   @Input() f: Utenti;
   utoggForm : FormGroup;
   oggettoUtente : OggettiUtente[] = OGGETTIUTENTE;
+  
   constructor(fb: FormBuilder) {
     this.utoggForm = fb.group({
      'oggutente': [''],
@@ -21,6 +23,7 @@ export class UserObjectsComponent implements OnInit {
   onSubmit(value: string): void {
     console.log('oggetto utente: ', this.utoggForm.controls['oggutente'].value);
     this.onAdd();
+    
  }
  onAdd(){
    let ou : OggettiUtente = new OggettiUtente();
@@ -29,8 +32,12 @@ export class UserObjectsComponent implements OnInit {
    this.oggettoUtente.push(ou);
    console.log("Aggiunto");
  }
+ 
 
-  ngOnInit() {
+ 
+ 
+
+ ngOnInit() {
   }
 
 }
