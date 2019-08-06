@@ -1,20 +1,13 @@
-<div class="row">
-<div class="col-sm-6">
-<h4> Aggiungi un oggetto </h4>
 
-<form [formGroup] = "utoggForm"  (ngSubmit)="onSubmit(utoggForm.value)" class="jumbotron">
-             Inserisci un oggetto:<input type="text" [formControl]="utoggForm.controls['oggutente']" class="form-control"><br>
-              <button type='submit' class="btn btn-primary">Invia</button>
-</form>
-</div>
+
 <div class="col-sm-6">
     <h4> Oggetti in possesso dell'utente </h4>
     <div class="card-header">
         <ul>
-            <li *ngFor = "let u of oggettoUtente">
-                    <h5>{{u.nomeOggetto}} </h5>
+            <li *ngFor = "let u of oggettoV">
+                 <h5>{{u}}</h5>
             </li>
         </ul>
+        <button (click)="onContr()" class="btn btn-secondary">Vedere</button>
     </div>
-</div>
 </div>

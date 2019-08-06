@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { OggettiUtente } from '../oggettiutente';
 import { OGGETTIUTENTE } from '../mock-oggettiutente';
 import { Utenti } from '../utenti';
-import { FormGroup, FormBuilder } from '@angular/forms';
+
 
 
 @Component({
@@ -12,31 +12,21 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class UserObjectsComponent implements OnInit {
   @Input() f: Utenti;
-  utoggForm : FormGroup;
   oggettoUtente : OggettiUtente[] = OGGETTIUTENTE;
-  
-  constructor(fb: FormBuilder) {
-    this.utoggForm = fb.group({
-     'oggutente': [''],
-   });
-  }
-  onSubmit(value: string): void {
-    console.log('oggetto utente: ', this.utoggForm.controls['oggutente'].value);
-    this.onAdd();
+  oggettoV = [];
+  j = 0;
+  constructor() {
     
- }
- onAdd(){
-   let ou : OggettiUtente = new OggettiUtente();
-   ou.proprietario = this.f.username;
-   ou.nomeOggetto = this.utoggForm.controls['oggutente'].value;
-   this.oggettoUtente.push(ou);
-   console.log("Aggiunto");
- }
- 
-
- 
- 
-
+   }
+  onContr(){
+    for(let i=0; i<this.oggettoUtente.length; i++){
+        if(this.oggettoUtente[i].proprietario == this.f.username){
+            this.oggettoV[this.j] = this.oggettoUtente[i].nomeOggetto;
+            console.log(this.oggettoV[i]);
+            this.j++;
+        }
+    }
+  }
  ngOnInit() {
   }
 
