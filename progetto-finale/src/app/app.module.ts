@@ -9,6 +9,7 @@ import { UtentiDettagliComponent } from './utenti-dettagli/utenti-dettagli.compo
 import { NewObjectComponent } from './new-object/new-object.component';
 import { UserObjectsComponent } from './user-objects/user-objects.component';
 import { ObjectsListComponent } from './objects-list/objects-list.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ObjectsListComponent } from './objects-list/objects-list.component';
     UtentiDettagliComponent,
     NewObjectComponent,
     UserObjectsComponent,
-    ObjectsListComponent
+    ObjectsListComponent,
+    NewPostComponent
     
   ],
  imports: [
